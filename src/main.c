@@ -257,12 +257,13 @@ void play_hangman(const byte *word, byte length);
 //     }
 // }
 
-void lowercase(byte *word) {
-    byte length = get_word_length(word);
-    for (byte i = 0; i < length; i++) {
-        word[i] = tolower(word[i]);
-    }
-}
+void lowercase(byte *word);
+// {
+//     byte length = get_word_length(word);
+//     for (byte i = 0; i < length; i++) {
+//         word[i] = tolower(word[i]);
+//     }
+// }
 
 int main(int argc, char **argv) {
     if (argc != 2) {
