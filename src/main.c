@@ -219,42 +219,43 @@ byte guess_letter(byte *guessed_letters, byte guessed_letters_length);
 //     return guess;
 // }
 
-void play_hangman(const byte *word, byte length) {
-    byte missed_guesses = 0;
-    byte *guessed_letters = (byte *)calloc(26 * 2, 1);
-    byte guessed_letters_length = 0;
-    while (1) {
-        print_word_state(word, length, guessed_letters, guessed_letters_length);
-        print_hangman(missed_guesses);
-        get_incorrect_letters(word, length, guessed_letters,
-                              &guessed_letters[26]);
-        print_missed_letters(&guessed_letters[26]);
+void play_hangman(const byte *word, byte length);
+// {
+//     byte missed_guesses = 0;
+//     byte *guessed_letters = (byte *)calloc(26 * 2, 1);
+//     byte guessed_letters_length = 0;
+//     while (1) {
+//         print_word_state(word, length, guessed_letters,
+//         guessed_letters_length); print_hangman(missed_guesses);
+//         get_incorrect_letters(word, length, guessed_letters,
+//                               &guessed_letters[26]);
+//         print_missed_letters(&guessed_letters[26]);
 
-        byte guess = guess_letter(guessed_letters, guessed_letters_length);
-        guessed_letters[guessed_letters_length++] = guess;
-        if (!guess) {
-            continue;
-        }
+//         byte guess = guess_letter(guessed_letters, guessed_letters_length);
+//         guessed_letters[guessed_letters_length++] = guess;
+//         if (!guess) {
+//             continue;
+//         }
 
-        if (str_contains(word, length, guess)) {
-            printf("Correct!\n\n");
-        } else {
-            printf("Incorrect!\n\n");
-            missed_guesses++;
-        }
+//         if (str_contains(word, length, guess)) {
+//             printf("Correct!\n\n");
+//         } else {
+//             printf("Incorrect!\n\n");
+//             missed_guesses++;
+//         }
 
-        if (is_word_complete(word, length, guessed_letters,
-                             guessed_letters_length)) {
-            printf("You win!\n");
-            break;
-        }
+//         if (is_word_complete(word, length, guessed_letters,
+//                              guessed_letters_length)) {
+//             printf("You win!\n");
+//             break;
+//         }
 
-        if (is_game_over(missed_guesses)) {
-            printf("You lose!\n");
-            break;
-        }
-    }
-}
+//         if (is_game_over(missed_guesses)) {
+//             printf("You lose!\n");
+//             break;
+//         }
+//     }
+// }
 
 void lowercase(byte *word) {
     byte length = get_word_length(word);
