@@ -31,8 +31,12 @@ correct_args:
     mov r0, r5
     bl get_word_length
     mov r1, r0 @ r4 = word_length
+    mov r4, r1
     mov r0, r5
     bl play_hangman
+    mov r1, r4
+    mov r0, r5
+    bl print_word
 
     mov r0, #0
 exit:

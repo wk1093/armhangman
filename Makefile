@@ -30,7 +30,7 @@ run: $(EXE) # easier than have to type "./program" after running make
 	./$(EXE) words.txt
 
 lines:
-	wc -l src/*.s src/*.S
+	wc -l src/*.s
 linesc:
 	wc -l src/*.c src/*.s
 
