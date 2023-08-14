@@ -208,15 +208,16 @@ void get_incorrect_letters(const byte *word, byte word_length,
 //     }
 // }
 
-byte guess_letter(byte *guessed_letters, byte guessed_letters_length) {
-    printf("Guess your next letter: ");
-    byte guess = tolower(getinput());
-    if (str_contains(guessed_letters, guessed_letters_length, guess)) {
-        printf("You already guessed that letter!\n\n");
-        return 0;
-    }
-    return guess;
-}
+byte guess_letter(byte *guessed_letters, byte guessed_letters_length);
+// {
+//     printf("Guess your next letter: ");
+//     byte guess = tolower(getinput());
+//     if (str_contains(guessed_letters, guessed_letters_length, guess)) {
+//         printf("You already guessed that letter!\n\n");
+//         return 0;
+//     }
+//     return guess;
+// }
 
 void play_hangman(const byte *word, byte length) {
     byte missed_guesses = 0;
