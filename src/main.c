@@ -158,8 +158,7 @@ void print_word_state(const byte *word, byte length,
 // }
 
 byte is_word_complete(const byte *word, byte length,
-                      const byte *guessed_letters,
-                      byte guessed_letters_length);
+                      const byte *guessed_letters, byte guessed_letters_length);
 // {
 //     for (byte i = 0; i < length; i++) {
 //         byte found = 0;
@@ -176,16 +175,18 @@ byte is_word_complete(const byte *word, byte length,
 //     return 1;
 // }
 
-byte is_game_over(byte missed_guesses) { return missed_guesses == 7; }
+byte is_game_over(byte missed_guesses);
+// { return missed_guesses == 7; }
 
-byte is_guess_correct(const byte *word, byte length, byte guess) {
-    for (byte i = 0; i < length; i++) {
-        if (word[i] == guess) {
-            return 1;
-        }
-    }
-    return 0;
-}
+byte is_guess_correct(const byte *word, byte length, byte guess);
+// {
+//     for (byte i = 0; i < length; i++) {
+//         if (word[i] == guess) {
+//             return 1;
+//         }
+//     }
+//     return 0;
+// }
 
 byte is_guess_already_made(const byte *guessed_letters, byte length,
                            byte guess) {
