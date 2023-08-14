@@ -1,13 +1,13 @@
-@ is_guess_correct.s
+@ str_contains.s
 
     .cpu cortex-a53
     .fpu neon-fp-armv8
     .syntax unified
     .text
     .align 2
-    .global is_guess_correct
-    .type is_guess_correct, %function
-is_guess_correct:
+    .global str_contains
+    .type str_contains, %function
+str_contains:
     push {r4, r5, fp, lr}
     add fp, sp, #12
 

@@ -178,7 +178,7 @@ byte is_word_complete(const byte *word, byte length,
 byte is_game_over(byte missed_guesses);
 // { return missed_guesses == 7; }
 
-byte is_guess_correct(const byte *word, byte length, byte guess);
+byte str_contains(const byte *word, byte length, byte guess);
 // {
 //     for (byte i = 0; i < length; i++) {
 //         if (word[i] == guess) {
@@ -187,16 +187,6 @@ byte is_guess_correct(const byte *word, byte length, byte guess);
 //     }
 //     return 0;
 // }
-
-byte is_guess_already_made(const byte *guessed_letters, byte length,
-                           byte guess) {
-    for (byte i = 0; i < length; i++) {
-        if (guessed_letters[i] == guess) {
-            return 1;
-        }
-    }
-    return 0;
-}
 
 void get_incorrect_letters(const byte *word, byte word_length,
                            const byte *guessed_letters,
@@ -219,7 +209,7 @@ void get_incorrect_letters(const byte *word, byte word_length,
 byte guess_letter(byte *guessed_letters, byte guessed_letters_length) {
     printf("Guess your next letter: ");
     byte guess = tolower(getinput());
-    if (is_guess_already_made(guessed_letters, guessed_letters_length, guess)) {
+    if (str_contains(guessed_letters, guessed_letters_length, guess)) {
         printf("You already guessed that letter!\n\n");
         return 0;
     }
@@ -243,7 +233,7 @@ void play_hangman(const byte *word, byte length) {
             continue;
         }
 
-        if (is_guess_correct(word, length, guess)) {
+        if (str_contains(word, length, guess)) {
             printf("Correct!\n\n");
         } else {
             printf("Incorrect!\n\n");
