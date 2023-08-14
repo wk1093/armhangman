@@ -43,42 +43,55 @@
 typedef uint8_t byte;
 
 byte getinput();
+// {
+//     byte key = getchar();
+//     while (!isalpha(key)) {
+//         key = getchar();
+//     }
+//     return key;
+// }
 
 void seed_random();
+// { srand(time(NULL)); }
 
 float rand_float();
+// { return (float)rand() / (float)RAND_MAX; }
 
 byte get_file_size(FILE *file);
+// {
+//     fseek(file, 0L, SEEK_END); // seek_end = 2
+//     byte size = ftell(file) + 1;
+//     fseek(file, 0L, SEEK_SET); // seek_set = 0
+//     return size;
+// }
 
-void end_word(byte *word) {
-    byte length = strlen(word);
-    if (length > 0 && word[length - 1] == '\n') {
-        word[length - 1] = '\0';
-    }
-}
+void end_word(byte *word);
+// {
+//     byte length = strlen(word);
+//     if (length > 0 && word[length - 1] == '\n') {
+//         word[length - 1] = '\0';
+//     }
+// }
 
-byte *get_random_word(const byte *filename) {
-    FILE *file = fopen(filename, "r");
-    if (!file) {
-        return NULL;
-    }
-    // get size of file
-    byte size = get_file_size(file);
-    // read file
-    // allocate memory for filebuffer and word
-    // this is easier to do than allocating two seperate arrays
-    byte *buffer = (byte *)malloc(size * 2);
-    buffer[size] = '\0'; // null terminate buffer
-    byte lineno = 0;
-    while (fgets(buffer, size, file)) {
-        if (rand_float() < 1.0 / ++lineno) {
-            strcpy(&buffer[size], buffer);
-        }
-    }
-    fclose(file);
-    end_word(&buffer[size]);
-    return &buffer[size];
-}
+byte *get_random_word(const byte *filename);
+// {
+//     FILE *file = fopen(filename, "r");
+//     if (!file) {
+//         return NULL;
+//     }
+//     byte size = get_file_size(file);
+//     byte *buffer = (byte *)malloc(size * 2);
+//     buffer[size] = '\0';
+//     byte lineno = 0;
+//     while (fgets(buffer, size, file)) {
+//         if (rand_float() < 1.0 / ++lineno) {
+//             strcpy(&buffer[size], buffer);
+//         }
+//     }
+//     fclose(file);
+//     end_word(&buffer[size]);
+//     return &buffer[size];
+// }
 
 byte get_word_length(const byte *word) {
     byte length = 0;
