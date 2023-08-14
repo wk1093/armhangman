@@ -93,7 +93,6 @@ after_correct:
     mov r1, r6
     mov r2, r5
     ldrb r3, [fp, #-22]
-    boksoid:
     bl is_word_complete
     cmp r0, #0
     bne you_win
