@@ -137,25 +137,25 @@ void print_missed_letters(const byte *missed_letters);
 // }
 
 void print_word_state(const byte *word, byte length,
-                      const byte *guessed_letters,
-                      byte guessed_letters_length) {
-    printf("guessed: ");
-    for (byte i = 0; i < length; i++) {
-        byte found = 0;
-        for (byte j = 0; j < guessed_letters_length; j++) {
-            if (word[i] == guessed_letters[j]) {
-                found = 1;
-                break;
-            }
-        }
-        if (found) {
-            printf("%c ", word[i]);
-        } else {
-            printf("- ");
-        }
-    }
-    printf("\n");
-}
+                      const byte *guessed_letters, byte guessed_letters_length);
+// {
+//     printf("guessed: ");
+//     for (byte i = 0; i < length; i++) {
+//         byte found = 0;
+//         for (byte j = 0; j < guessed_letters_length; j++) {
+//             if (word[i] == guessed_letters[j]) {
+//                 found = 1;
+//                 break;
+//             }
+//         }
+//         if (found) {
+//             printf("%c ", word[i]);
+//         } else {
+//             printf("- ");
+//         }
+//     }
+//     printf("\n");
+// }
 
 byte is_word_complete(const byte *word, byte length,
                       const byte *guessed_letters,
