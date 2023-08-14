@@ -1,38 +1,3 @@
-// Write a program that will read from a random
-// word from a text file (dictionary.txt) containing English words (one word per
-// line). Continue to ask the user for a letter until the user has either
-// guessed all the letters in the word, or until the word H-A-N-G-M-A-N has been
-// completely filled out, whichever comes first. After each guess, print out the
-// letters correctly guessed and the letters in H-A-N-G-M-A-N opened as a
-// consequence of missed guesses. Each time that a missed guess was made, print
-// out the text “>>>>>>>>WRONG GUESS<<<<<<<<<”. Also, keep an array of letters
-// already guessed and print them out at each move.
-
-// Example:
-//  In file dictionary.txt:
-//  computer
-//  program
-//  …
-//  Suppose the word “program” was randomly selected.
-//  Guess your next letter >> p
-//  p - - - - - -
-//  - - - - - - -
-//  Missed letters:
-//  Guess your next letter >> g
-//  p - - g - - -
-//  - - - - - - -
-//  Missed letters:
-//  Guess your next letter >> z
-//  >>>>>>>>WRONG GUESS<<<<<<<<<
-//  p - - g - - -
-//  H - - - - - -
-//  Missed letters: z
-//  Guess your next letter >>x
-//  >>>>>>>>WRONG GUESS<<<<<<<<<
-//  p - - g - - -
-//  H A - - - - -
-//  Missed letters: z x
-
 #include <ctype.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -265,16 +230,17 @@ void lowercase(byte *word);
 //     }
 // }
 
-int main(int argc, char **argv) {
-    if (argc != 2) {
-        printf("Usage: %s <wordlist>\n", argv[0]);
-        return 1;
-    }
-    seed_random();
-    byte *word = get_random_word(argv[1]);
-    lowercase(word);
-    byte length = get_word_length(word);
-    print_word(word, length);
-    play_hangman(word, length);
-    return 0;
-}
+int main(int argc, char **argv);
+// {
+//     if (argc != 2) {
+//         printf("Usage: %s <wordlist>\n", argv[0]);
+//         return 1;
+//     }
+//     seed_random();
+//     byte *word = get_random_word(argv[1]);
+//     lowercase(word);
+//     byte length = get_word_length(word);
+//     print_word(word, length);
+//     play_hangman(word, length);
+//     return 0;
+// }
