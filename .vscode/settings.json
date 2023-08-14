@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.grey": "grey",
+        "*.crs": "rust",
+        "stdint.h": "c",
+        "time.h": "c"
+    }
+}
