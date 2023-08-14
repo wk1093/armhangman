@@ -1,7 +1,5 @@
 @ rand_float.s
 
-@ float rand_float() { return (float)rand() / (float)RAND_MAX; }
-
     .cpu cortex-a53
     .fpu neon-fp-armv8
     .syntax unified

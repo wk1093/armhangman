@@ -1,12 +1,5 @@
 @ get_file_size.s
 
-@ byte get_file_size(FILE *file) {
-@     fseek(file, 0L, SEEK_END); // seek_end = 2
-@     byte size = ftell(file) + 1;
-@     fseek(file, 0L, SEEK_SET); // seek_set = 0
-@     return size;
-@ }
-
     .cpu cortex-a53
     .fpu neon-fp-armv8
     .syntax unified

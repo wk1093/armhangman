@@ -1,24 +1,5 @@
 @ get_random_word.s
 
-@ byte *get_random_word(const byte *filename) {
-@     FILE *file = fopen(filename, "r");
-@     if (!file) {
-@         return NULL;
-@     }
-@     byte size = get_file_size(file);
-@     byte *buffer = (byte *)malloc(size * 2);
-@     buffer[size] = '\0';
-@     byte lineno = 0;
-@     while (fgets(buffer, size, file)) {
-@         if (rand_float() < 1.0 / ++lineno) {
-@             strcpy(&buffer[size], buffer);
-@         }
-@     }
-@     fclose(file);
-@     end_word(&buffer[size]);
-@     return &buffer[size];
-@ }
-
     .cpu cortex-a53
     .fpu neon-fp-armv8
     .syntax unified

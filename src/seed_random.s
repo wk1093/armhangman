@@ -1,7 +1,5 @@
 @ seed_random.s
 
-@ void seed_random() { srand(time(NULL)); }
-
     .cpu cortex-a53
     .fpu neon-fp-armv8
     .syntax unified

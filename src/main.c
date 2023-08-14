@@ -93,21 +93,23 @@ byte *get_random_word(const byte *filename);
 //     return &buffer[size];
 // }
 
-byte get_word_length(const byte *word) {
-    byte length = 0;
-    while (word[length] != '\n' && word[length] != '\0') {
-        length++;
-    }
-    return length;
-}
+byte get_word_length(const byte *word);
+// {
+//     byte length = 0;
+//     while (word[length] != '\n' && word[length] != '\0') {
+//         length++;
+//     }
+//     return length;
+// }
 
-void print_word(const byte *word, byte length) {
-    printf("The word is: ");
-    for (byte i = 0; i < length; i++) {
-        printf("%c", word[i]);
-    }
-    printf("\n");
-}
+void print_word(const byte *word, byte length);
+// {
+//     printf("The word is: ");
+//     for (byte i = 0; i < length; i++) {
+//         printf("%c", word[i]);
+//     }
+//     printf("\n");
+// }
 
 void print_hangman(byte missed_guesses) {
     printf("Hangman: ");

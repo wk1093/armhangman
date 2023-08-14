@@ -1,13 +1,5 @@
 @ getinput.s
 
-@ byte getinput() {
-@     byte key = getchar();
-@     while (!isalpha(key)) {
-@         key = getchar();
-@     }
-@     return key;
-@ }
-
     .cpu cortex-a53
     .fpu neon-fp-armv8
     .syntax unified

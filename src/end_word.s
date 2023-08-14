@@ -1,12 +1,5 @@
 @ end_word.s
 
-@ void end_word(byte *word) {
-@     byte length = strlen(word);
-@     if (length > 0 && word[length - 1] == '\n') {
-@         word[length - 1] = '\0';
-@     }
-@ }
-
     .cpu cortex-a53
     .fpu neon-fp-armv8
     .syntax unified
