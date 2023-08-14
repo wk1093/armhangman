@@ -190,21 +190,23 @@ byte str_contains(const byte *word, byte length, byte guess);
 
 void get_incorrect_letters(const byte *word, byte word_length,
                            const byte *guessed_letters,
-                           byte *incorrect_letters) {
-    byte incorrect_letters_length = 0;
-    for (byte i = 0; i < 26; i++) {
-        byte found = 0;
-        for (byte j = 0; j < word_length; j++) {
-            if (guessed_letters[i] == word[j]) {
-                found = 1;
-                break;
-            }
-        }
-        if (!found) {
-            incorrect_letters[incorrect_letters_length++] = guessed_letters[i];
-        }
-    }
-}
+                           byte *incorrect_letters);
+// {
+//     byte incorrect_letters_length = 0;
+//     for (byte i = 0; i < 26; i++) {
+//         byte found = 0;
+//         for (byte j = 0; j < word_length; j++) {
+//             if (guessed_letters[i] == word[j]) {
+//                 found = 1;
+//                 break;
+//             }
+//         }
+//         if (!found) {
+//             incorrect_letters[incorrect_letters_length++] =
+//             guessed_letters[i];
+//         }
+//     }
+// }
 
 byte guess_letter(byte *guessed_letters, byte guessed_letters_length) {
     printf("Guess your next letter: ");
