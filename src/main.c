@@ -111,28 +111,30 @@ void print_word(const byte *word, byte length);
 //     printf("\n");
 // }
 
-void print_hangman(byte missed_guesses) {
-    printf("Hangman: ");
-    const char *hm = "HANGMAN";
-    for (byte i = 0; i < 7; i++) {
-        if (i < missed_guesses) {
-            printf("%c ", hm[i]);
-        } else {
-            printf("- ");
-        }
-    }
-    printf("\n");
-}
+void print_hangman(byte missed_guesses);
+// {
+//     printf("Hangman: ");
+//     const char *hm = "HANGMAN";
+//     for (byte i = 0; i < 7; i++) {
+//         if (i < missed_guesses) {
+//             printf("%c ", hm[i]);
+//         } else {
+//             printf("- ");
+//         }
+//     }
+//     printf("\n");
+// }
 
-void print_missed_letters(const byte *missed_letters) {
-    printf("Missed letters: ");
-    for (byte i = 0; i < 26; i++) {
-        if (missed_letters[i] == '\0')
-            continue; // skip null bytes
-        printf("%c ", tolower(missed_letters[i]));
-    }
-    printf("\n");
-}
+void print_missed_letters(const byte *missed_letters);
+// {
+//     printf("Missed letters: ");
+//     for (byte i = 0; i < 26; i++) {
+//         if (missed_letters[i] == '\0')
+//             continue; // skip null bytes
+//         printf("%c ", tolower(missed_letters[i]));
+//     }
+//     printf("\n");
+// }
 
 void print_word_state(const byte *word, byte length,
                       const byte *guessed_letters,

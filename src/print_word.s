@@ -1,4 +1,5 @@
 @ print_word.s
+
     .cpu cortex-a53
     .fpu neon-fp-armv8
     .syntax unified

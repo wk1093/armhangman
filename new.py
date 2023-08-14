@@ -16,6 +16,7 @@ def main(name, use_extra_registers):
 
         f.write(f"""
 @ {name}.s
+
     .cpu cortex-a53
     .fpu neon-fp-armv8
     .syntax unified
