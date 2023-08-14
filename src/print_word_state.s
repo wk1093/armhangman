@@ -40,7 +40,6 @@ loopj_begin:
     mov r5, #1
     b loopj_end
 
-
 loopj_inc:
     add r2, r2, #1
     b loopj_begin
